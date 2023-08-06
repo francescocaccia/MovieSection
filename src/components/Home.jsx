@@ -93,7 +93,7 @@ const Home = () => {
       </div>
 
       {/* fine header */}
-      <Container>
+      <div className="cardContainer">
         <div className="row row-cols-1 row-cols-md-3">
           {movies.map((movie) => (
             <div key={movie.imdbID} className="col mb-4">
@@ -111,7 +111,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </>
   );
 };
