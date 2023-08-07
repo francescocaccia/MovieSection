@@ -3,7 +3,7 @@ import { BiCameraMovie } from "react-icons/bi";
 const Footer = () => {
   return (
     <>
-      <div className="bg-dark ">
+      <div className="bg-dark">
         <div className="title-container d-flex justify-content-center align-items-center">
           <h6 className=" text-light fs-4 mt-4">
             "The Best Movies at Your Fingertips"
