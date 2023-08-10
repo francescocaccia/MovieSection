@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import film from "../film.svg";
+import logo2film from "../logo2film.svg";
 import DeNiro from "../Goodfellas.mp4";
 import "../App.css";
-import { Button, Container, FormControl } from "react-bootstrap";
+import { Button, FormControl } from "react-bootstrap";
 import { VscUnmute } from "react-icons/vsc";
 import { IoVolumeMuteOutline } from "react-icons/io5";
-
+import { BiCameraMovie } from "react-icons/bi";
 const Home = () => {
   const API_KEY = "979f3094";
   const [query, setQuery] = useState("");
@@ -31,6 +32,7 @@ const Home = () => {
         setMovies([]);
       }
     } catch (error) {
+      alert("si è verificato un errore: " + error);
       console.error(error);
     }
   };
@@ -91,13 +93,34 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="d-flex justify-content-center align-items-center">
+        {movies.length > 0 && (
+          <>
+            <h3 className="text-center">
+              Scopri il Tuo Prossimo Film Preferito
+            </h3>
+            <div className="text-center">
+              <img
+                src={logo2film}
+                width={70}
+                height={70}
+                alt="logo2film"
+                className="logo2film"
+              />
+            </div>
+          </>
+        )}
+      </div>
 
       {/* fine header */}
       <div className="cardContainer">
-        <div className="row row-cols-1 row-cols-md-3">
+        <div className="row row-cols-1 row-cols-md-3 justify-content-center">
           {movies.map((movie) => (
-            <div key={movie.imdbID} className="col mb-4">
-              <div className="card h-100 movie-card">
+            <div
+              key={movie.imdbID}
+              className="col-12 col-md-4 col-lg-3 mb-4 mt-4  me-2"
+            >
+              <div className="card h-100 movie-card d-flex align-items-center justify-content-center">
                 <img
                   src={movie.Poster}
                   alt={movie.Title}
